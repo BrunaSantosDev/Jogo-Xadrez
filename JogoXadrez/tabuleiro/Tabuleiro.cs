@@ -15,11 +15,11 @@ namespace tabuleiro
             pecas = new Peca[Linhas, Colunas];
         }
 
-        public Peca peca(int linha, int coluna)
+        public Peca peca(int linhas, int colunas)
         {
-            return pecas[linha, coluna];
+            return pecas[linhas, colunas];
         }
-
+      
         public void colocarPeca(Peca p, Posicao pos)
         {
             pecas[pos.Linha, pos.Coluna] = p;
