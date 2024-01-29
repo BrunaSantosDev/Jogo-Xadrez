@@ -3,15 +3,15 @@ using tabuleiro;
 
 namespace xadrez
 {
-    class Rei : Peca
+    class Torre : Peca
     {
-        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
         public override string ToString()
         {
-            return "R";
+            return "T";
         }
     }
 }
