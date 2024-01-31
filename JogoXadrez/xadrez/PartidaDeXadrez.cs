@@ -63,7 +63,7 @@ namespace xadrez
             {
                 Xeque = true;
             }
-            else
+            else 
             {
                 Xeque = false;
             }
@@ -126,7 +126,7 @@ namespace xadrez
         public HashSet<Peca> pecasEmJogo(Cor cor)
         {
             HashSet<Peca> aux = new HashSet<Peca>();
-            foreach (Peca x in capturadas)
+            foreach (Peca x in pecas)
             {
                 if (x.Cor == cor)
                 {
