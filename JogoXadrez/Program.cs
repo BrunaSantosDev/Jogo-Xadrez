@@ -42,12 +42,19 @@ namespace JogoXadrez
                         Console.WriteLine();
                         Console.WriteLine("Pressione enter para continuar...");
                         Console.ReadLine();
-                    }
+                    }                    
                 }
             }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine();
+                Console.WriteLine("Pressione enter para continuar...");
+                Console.ReadLine();
             }
         }
     }

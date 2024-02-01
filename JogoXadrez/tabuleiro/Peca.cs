@@ -15,8 +15,8 @@ namespace tabuleiro
             Tab = tab;
             Cor = cor;
             this.QteMovimentos = 0;
-        }      
-        
+        }
+
         public void incrementarQteMovimetos()
         {
             QteMovimentos++;
@@ -30,9 +30,9 @@ namespace tabuleiro
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
-            for (int i=0; i<Tab.Linhas; i++)
+            for (int i = 0; i < Tab.Linhas; i++)
             {
-                for (int j=0; j<Tab.Colunas; j++)
+                for (int j = 0; j < Tab.Colunas; j++)
                 {
                     if (mat[i, j])
                     {
@@ -43,7 +43,7 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.Linha, pos.Coluna];
         }
