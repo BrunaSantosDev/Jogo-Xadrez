@@ -2,7 +2,7 @@
 using tabuleiro;
 using xadrez;
 
-namespace xadrez_console
+namespace JogoXadrez
 {
     class Program
     {

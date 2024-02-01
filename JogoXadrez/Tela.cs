@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using tabuleiro;
 using xadrez;
 
-namespace xadrez_console
+namespace JogoXadrez
 {
     class Tela
     {
