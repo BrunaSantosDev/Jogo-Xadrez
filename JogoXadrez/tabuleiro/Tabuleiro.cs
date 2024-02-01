@@ -19,16 +19,26 @@
             return pecas[linha, coluna];
         }
 
+<<<<<<< HEAD
         public Peca peca(Posicao pos)
         {
             return pecas[pos.linha, pos.coluna];
         }
 
+=======
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
         public bool existePeca(Posicao pos)
         {
             validarPosicao(pos);
             return peca(pos) != null;
         }
+<<<<<<< HEAD
+=======
+        public Peca peca(Posicao pos)
+        {
+            return pecas[pos.Linha, pos.Coluna];
+        }
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
 
         public void colocarPeca(Peca p, Posicao pos)
         {

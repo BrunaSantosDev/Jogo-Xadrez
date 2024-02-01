@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using tabuleiro;
 
 namespace xadrez
@@ -6,17 +7,37 @@ namespace xadrez
     class Peao : Peca
     {
 
+=======
+﻿using System;
+using tabuleiro;
+
+namespace xadrez
+{
+    class Peao : Peca
+    {
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
         public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
         public override string ToString()
         {
+<<<<<<< HEAD
             return "P";
+=======
+            return "P ";
+        }
+
+        private bool podeMover(Posicao pos)
+        {
+            Peca p = Tab.peca(pos);
+            return p == null || p.Cor != Cor;
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
         }
 
         private bool existeInimigo(Posicao pos)
         {
+<<<<<<< HEAD
             Peca p = tab.peca(pos);
             return p != null && p.cor != cor;
         }
@@ -80,10 +101,69 @@ namespace xadrez
                 if (tab.posicaoValida(pos) && existeInimigo(pos))
                 {
                     mat[pos.linha, pos.coluna] = true;
+=======
+            Peca p = Tab.peca(pos);
+            return p != null && p.Cor != Cor;
+        }
+        
+        public override bool[,] movimentosPossiveis()
+        {
+            bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
+            Posicao pos = new Posicao(0, 0);
+
+            // Peões Brancos
+            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
+            if (Tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                pos.definirValores(Posicao.Linha - 2, Posicao.Coluna);
+                if (Tab.posicaoValida(pos) && podeMover(pos) && QteMovimentos == 0)
+                {
+
+                    mat[pos.Linha, pos.Coluna] = true;
+
+                }
+                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+                }
+                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+                }
+            }
+
+            // Peões Pretos
+            pos.definirValores(Posicao.Linha + 1, Posicao.Coluna);
+            if (Tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                pos.definirValores(Posicao.Linha + 2, Posicao.Coluna);
+                if (Tab.posicaoValida(pos) && podeMover(pos) && QteMovimentos == 0)
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+
+                }
+                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+                }
+                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.Linha, pos.Coluna] = true;
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
                 }
             }
 
             return mat;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
