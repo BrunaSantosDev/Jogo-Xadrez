@@ -8,12 +8,14 @@ namespace JogoXadrez
     {
         static void Main(string[] args)
         {
+
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while (!partida.Terminada)
+                while (!partida.terminada)
                 {
+
                     try
                     {
                         Console.Clear();
@@ -24,10 +26,10 @@ namespace JogoXadrez
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
 
-                        bool[,] posicoesPossiveis = partida.Tab.peca(origem).movimentosPossiveis();
+                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.Tab, posicoesPossiveis);
+                        Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
                         Console.WriteLine();
                         Console.Write("Destino: ");
@@ -39,23 +41,18 @@ namespace JogoXadrez
                     catch (TabuleiroException e)
                     {
                         Console.WriteLine(e.Message);
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione enter para continuar...");
                         Console.ReadLine();
-                    }                    
+                    }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine();
-                Console.WriteLine("Pressione enter para continuar...");
-                Console.ReadLine();
-            }
+
+            Console.ReadLine();
         }
     }
 }

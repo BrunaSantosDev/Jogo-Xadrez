@@ -1,80 +1,85 @@
-﻿using System;
 using tabuleiro;
 
 namespace xadrez
 {
+
     class Peao : Peca
     {
+
         public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
 
         public override string ToString()
         {
-            return "P ";
-        }
-
-        private bool podeMover(Posicao pos)
-        {
-            Peca p = Tab.peca(pos);
-            return p == null || p.Cor != Cor;
+            return "P";
         }
 
         private bool existeInimigo(Posicao pos)
         {
-            Peca p = Tab.peca(pos);
-            return p != null && p.Cor != Cor;
+            Peca p = tab.peca(pos);
+            return p != null && p.cor != cor;
         }
-        
+
+        private bool livre(Posicao pos)
+        {
+            return tab.peca(pos) == null;
+        }
+
         public override bool[,] movimentosPossiveis()
         {
-            bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
+            bool[,] mat = new bool[tab.linhas, tab.colunas];
             Posicao pos = new Posicao(0, 0);
 
-            // Peões Brancos
-            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tab.posicaoValida(pos) && podeMover(pos))
+            // Peoes Brancos
+            if (cor == Cor.Branca)
             {
-                mat[pos.Linha, pos.Coluna] = true;
-                pos.definirValores(Posicao.Linha - 2, Posicao.Coluna);
-                if (Tab.posicaoValida(pos) && podeMover(pos) && QteMovimentos == 0)
+                pos.definirValores(posicao.linha - 1, posicao.coluna);
+                if (tab.posicaoValida(pos) && livre(pos))
                 {
-
-                    mat[pos.Linha, pos.Coluna] = true;
-
+                    mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
-                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                pos.definirValores(posicao.linha - 2, posicao.coluna);
+                Posicao p2 = new Posicao(posicao.linha - 1, posicao.coluna);
+                if (tab.posicaoValida(p2) && livre(p2) && tab.posicaoValida(pos) && livre(pos) && qteMovimentos == 0)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
-                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos))
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos.linha, pos.coluna] = true;
+                }
+                pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.linha, pos.coluna] = true;
                 }
             }
 
-            // Peões Pretos
-            pos.definirValores(Posicao.Linha + 1, Posicao.Coluna);
-            if (Tab.posicaoValida(pos) && podeMover(pos))
+            // Peoes Amarelos
+            else
             {
-                mat[pos.Linha, pos.Coluna] = true;
-                pos.definirValores(Posicao.Linha + 2, Posicao.Coluna);
-                if (Tab.posicaoValida(pos) && podeMover(pos) && QteMovimentos == 0)
+                pos.definirValores(posicao.linha + 1, posicao.coluna);
+                if (tab.posicaoValida(pos) && livre(pos))
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
-
+                    mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
-                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                pos.definirValores(posicao.linha + 2, posicao.coluna);
+                Posicao p2 = new Posicao(posicao.linha + 1, posicao.coluna);
+                if (tab.posicaoValida(p2) && livre(p2) && tab.posicaoValida(pos) && livre(pos) && qteMovimentos == 0)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos.linha, pos.coluna] = true;
                 }
-                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
-                if (Tab.posicaoValida(pos) && existeInimigo(pos))
+                pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos))
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    mat[pos.linha, pos.coluna] = true;
+                }
+                pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+                if (tab.posicaoValida(pos) && existeInimigo(pos))
+                {
+                    mat[pos.linha, pos.coluna] = true;
                 }
             }
 
