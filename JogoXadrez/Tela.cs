@@ -33,16 +33,16 @@ namespace JogoXadrez
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             imprimirConjunto(partida.pecasCapturadas(Cor.Amarela));
-            Console.ForegroundColor  = aux;
+            Console.ForegroundColor = aux;
             Console.WriteLine();
         }
 
         public static void imprimirConjunto(HashSet<Peca> conjunto)
         {
             Console.Write("[");
-            foreach(Peca x in conjunto)
+            foreach (Peca x in conjunto)
             {
-                Console.Write(x + " ");
+                Console.Write(x);
             }
             Console.Write("]");
         }
@@ -67,14 +67,14 @@ namespace JogoXadrez
         {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
-            for (int i=0; i<tab.Linhas; i++)
+            for (int i = 0; i < tab.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for (int j=0; j<tab.Colunas; j++)
+                for (int j = 0; j < tab.Colunas; j++)
                 {
                     if (posicoesPossiveis[i, j])
                     {
-                        Console.BackgroundColor = fundoAlterado;                        
+                        Console.BackgroundColor = fundoAlterado;
                     }
                     else
                     {
