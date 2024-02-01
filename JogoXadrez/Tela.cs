@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using tabuleiro;
 using xadrez;
-using System.Collections.Generic;
 
 namespace xadrez_console
 {
     class Tela
     {
-<<<<<<< HEAD
 
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
@@ -29,36 +27,15 @@ namespace xadrez_console
             {
                 Console.WriteLine("XEQUEMATE!");
                 Console.WriteLine("Vencedor: " + partida.jogadorAtual);
-=======
-        public static void imprimirPartida(PartidaDeXadrez partida)
-        {
-            imprimirTabuleiro(partida.Tab);
-            Console.WriteLine();
-            imprimirPecasCapturadas(partida);
-            Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
-            if (partida.Xeque)
-            {
-                Console.WriteLine("XEQUE!");
->>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
             }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
             Console.WriteLine("Peças capturadas:");
-<<<<<<< HEAD
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
-=======
-
-            Console.Write("Brancas: ");
-            imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
-            Console.WriteLine();
-
->>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
             Console.Write("Amarelas: ");
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -72,11 +49,7 @@ namespace xadrez_console
             Console.Write("[");
             foreach (Peca x in conjunto)
             {
-<<<<<<< HEAD
                 Console.Write(x + " ");
-=======
-                Console.Write(x);
->>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
             }
             Console.Write("]");
         }
@@ -101,18 +74,11 @@ namespace xadrez_console
 
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
-<<<<<<< HEAD
 
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.colunas; j++)
-=======
-            for (int i = 0; i < tab.Linhas; i++)
-            {
-                Console.Write(8 - i + " ");
-                for (int j = 0; j < tab.Colunas; j++)
->>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
                 {
                     if (posicoePossiveis[i, j])
                     {

@@ -31,21 +31,12 @@ namespace xadrez
 
         public override bool[,] movimentosPossiveis()
         {
-<<<<<<< HEAD
             bool[,] mat = new bool[tab.linhas, tab.colunas];
             Posicao pos = new Posicao(0, 0);
 
             // verificando acima
             pos.definirValores(posicao.linha - 1, posicao.coluna);
             if (tab.posicaoValida(pos) && podeMover(pos))
-=======
-            bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
-            Posicao pos = new Posicao(0, 0);
-
-            // verificando acima
-            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tab.posicaoValida(pos) && podeMover(pos))
->>>>>>> 44d5cf8bf8c28534a77fb82a2919d386c2c8b16f
             {
                 mat[pos.linha, pos.coluna] = true;
             }
