@@ -27,9 +27,8 @@ namespace xadrez
             Posicao pos = new Posicao(0, 0);
 
             // A rainha/dama possui os mesmos movimentos do rei, bispo e torre. Portanto adicionei todas as funções abaixo.
-            // Começando pelo bispo:
 
-            // Verificando noroeste
+            // Começando pelo bispo: Verificando noroeste            
             pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
