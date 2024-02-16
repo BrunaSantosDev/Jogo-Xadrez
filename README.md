@@ -1,6 +1,5 @@
 <img width=100% src="https://fellowshipofthepawns.files.wordpress.com/2017/11/chess-banner.png?w=660"/>
 
-
 # Jogo de Xadrez em C# para Terminal
 
 Este é um projeto de **jogo de xadrez** desenvolvido inteiramente em **C#**, na plataforma .NET e executado no terminal.
@@ -26,6 +25,9 @@ Este é um projeto de **jogo de xadrez** desenvolvido inteiramente em **C#**, na
 - **C#**: Linguagem de programação principal.
 - **.NET Core**: Plataforma para desenvolvimento e execução do projeto.
 - **Terminal**: Interface de usuário para interação com o jogo.
+
+## Visualização do jogo final
+<img width=25% src="https://i.pinimg.com/736x/d2/0a/9a/d20a9a773822915c41e883b3ea13bb3f.jpg"/>
 
 ## Licença
 
